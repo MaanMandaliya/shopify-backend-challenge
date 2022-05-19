@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -19,3 +19,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] =\
 db = SQLAlchemy(app)
 
 import inventory.com.controller.ItemContoller
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
