@@ -2,7 +2,7 @@
 ## Shopify Backend Developer Intern - Fall 2022 Challenge
 TASK: Build an **inventory tracking web application** for a logistics company.
 
-**Features** (CRUD + Undeletion Feature)
+### Features (CRUD + Undeletion Feature)
 * **Create** Inventory Item
 * **Read** All Inventory Items
 * **Update** Inventory Item
@@ -10,7 +10,7 @@ TASK: Build an **inventory tracking web application** for a logistics company.
 * **Undelete** Inventory Item (Note: Additional Feature chosen)
 
 
-**Instructions**
+### Instructions
 * Visit Replit Link: [Inventory Application](https://shopify-backend-challenge.maanmandaliya.repl.co/)
     * Feature: Create Inventory Item
         1. Add Item in inventory using *Add Item* link
@@ -33,7 +33,7 @@ TASK: Build an **inventory tracking web application** for a logistics company.
         3. Undelete Item in inventory using *Undelete* action button 
         4. Redirected to homepage; see all Inventory items including the current one undeleted.
 
-Technology Stack
+### Technology Stack
 * Flask (Backend Framework)
 * HTML (Frontend Webpages)
 * CSS (Frontend Design)
