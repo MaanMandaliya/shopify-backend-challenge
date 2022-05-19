@@ -16,8 +16,6 @@ app.config['SQLALCHEMY_RECORD_QUERIES'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] =\
     'sqlite:///{}'.format(os.path.join(basedir, 'inventory.db'))
 
-# app.config['SQLALCHEMY_MAX_OVERFLOW'] = 0
-
 db = SQLAlchemy(app)
 
 import inventory.com.controller.ItemContoller
