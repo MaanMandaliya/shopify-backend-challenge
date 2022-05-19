@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undelete Items</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+
+<body>
+    <div>
+        <a class="styled-href" href="/">Inventory</a>
+    </div>
+    <table class="styled-table">
+        <thead>
+            <caption>Deleted Items</caption>
+            <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Item Price</th>
+                <th>Item Quantity</th>
+                <th>Deletion Comment</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if not items %}
+                <tr>
+                    <td colspan="6">No Items to undelete! Delete Item in inventory</td>
+                </tr>
+            {% endif %}
+            {% for item in items %}
+            <tr>
+                <td>{{ item['itemId'] }}</td>
+                <td>{{ item['itemName'] }}</td>
+                <td>{{ item['itemPrice'] }}$</td>
+                <td>{{ item['itemQuantity'] }}</td>
+                <td>{{ item['deletionComment'] }}</td>
+                <td>
+                    <form method="post" action="/inventory/undeleteItem?itemId={{ item['itemId'] }}">
+                        <button type="submit">Undelete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

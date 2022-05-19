@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Item</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+
+<body>
+    <form method="post" action="/inventory/updateItem" enctype="multipart/form-data">
+        <div>
+            <input type="hidden" name="itemId" id="itemId" value="{{ item['itemId'] }}">
+        </div>
+        <div>
+            <label for="itemName">Item Name</label>
+            <input type="text" name="itemName" id="itemName" value="{{ item['itemName'] }}">
+        </div>
+        <div>
+            <label for="itemPrice">Item Price</label>
+            <input type="text" name="itemPrice" id="itemPrice" value="{{ item['itemPrice'] }}">
+        </div>
+        <div>
+            <label for="itemQuantity">Item Quantity</label>
+            <input type="text" name="itemQuantity" id="itemQuantity" value="{{ item['itemQuantity'] }}">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

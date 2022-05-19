@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+
+<body>
+    <div>
+        <a class="styled-href" href="/inventory/addItem">Add Item</a>
+    </div>
+    <div>
+        <table class="styled-table">
+            <thead>
+                <caption>Inventory Items</caption>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
+                    <th>Item Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if not items %}
+                <tr>
+                    <td colspan="5">No Items! Add Item in inventory</td>
+                </tr>
+                {% endif %}
+                {% for item in items %}
+                <tr>
+                    <td>{{ item['itemId'] }}</td>
+                    <td>{{ item['itemName'] }}</td>
+                    <td>{{ item['itemPrice'] }}$</td>
+                    <td>{{ item['itemQuantity'] }}</td>
+                    <td>
+                        <a href="/inventory/editItem?itemId={{ item['itemId'] }}">Edit</a>
+                        /
+                        <a href="/inventory/deleteItem?itemId={{ item['itemId'] }}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a class="styled-href" href="/inventory/undeleteItems">Undelete Items</a>
+    </div>
+</body>
+
+</html>
