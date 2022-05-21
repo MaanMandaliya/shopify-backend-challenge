@@ -19,7 +19,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] =\
 db = SQLAlchemy(app)
 
 import inventory.com.controller.ItemContoller
-
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
+import inventory.com.controller.MainController
